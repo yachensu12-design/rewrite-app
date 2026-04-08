@@ -1,4 +1,4 @@
-import { getProgress, getLog, today, getDynamicExercises } from './storage'
+import { getProgress, getLog, getPlan, today, getDynamicExercises } from './storage'
 
 let exercisesCache = null
 

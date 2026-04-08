@@ -183,9 +183,6 @@ export default function Home() {
     )
   }
 
-  console.log('plan:', plan)
-  console.log('plan?.exercises:', plan?.exercises)
-  console.log('exercises[0]:', exercises[0])
 
   if (showFeelingInput) {
     const ex = getExerciseDetails(showFeelingInput)
