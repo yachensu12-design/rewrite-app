@@ -12,23 +12,34 @@ export default function Home() {
 
   useEffect(() => {
     async function init() {
-      await loadExercises()
-      const allExercises = getMergedExercises()
-      setExercises(allExercises)
+      try {
+        await loadExercises()
+        const allExercises = getMergedExercises()
+        console.log('加载的练习数量:', allExercises.length)
+        setExercises(allExercises)
 
-      const date = today()
-      let dailyPlan = getPlan(date)
+        // 如果没有加载到练习，显示错误
+        if (allExercises.length === 0) {
+          setLoading(false)
+          return
+        }
 
-      // 确保 progress 数据已初始化
-      getProgress()
+        const date = today()
+        let dailyPlan = getPlan(date)
 
-      if (!dailyPlan) {
-        const progress = getProgress()
-        dailyPlan = generateDailyPlan(allExercises, progress)
-        savePlan(date, dailyPlan)
+        // 确保 progress 数据已初始化
+        getProgress()
+
+        if (!dailyPlan) {
+          const progress = getProgress()
+          dailyPlan = generateDailyPlan(allExercises, progress)
+          savePlan(date, dailyPlan)
+        }
+
+        setPlan(dailyPlan)
+      } catch (err) {
+        console.error('初始化失败:', err)
       }
-
-      setPlan(dailyPlan)
       setLoading(false)
     }
     init()
@@ -153,6 +164,21 @@ export default function Home() {
     return (
       <div className="pt-8">
         <p className="text-stone-400 text-sm">加载中...</p>
+      </div>
+    )
+  }
+
+  if (exercises.length === 0) {
+    return (
+      <div className="pt-8 text-center">
+        <p className="text-stone-400 text-sm mb-4">练习库加载失败</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="px-6 py-2 rounded-full text-white text-sm"
+          style={{ backgroundColor: '#B07A48' }}
+        >
+          重新加载
+        </button>
       </div>
     )
   }

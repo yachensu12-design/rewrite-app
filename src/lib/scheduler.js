@@ -4,9 +4,17 @@ let exercisesCache = null
 
 export async function loadExercises() {
   if (exercisesCache) return exercisesCache
-  const res = await fetch('/exercises.json')
-  exercisesCache = await res.json()
-  return exercisesCache
+  try {
+    const res = await fetch('/exercises.json')
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    exercisesCache = await res.json()
+    return exercisesCache
+  } catch (err) {
+    console.error('加载练习库失败:', err)
+    // 返回空数组，让页面显示错误状态
+    exercisesCache = []
+    return exercisesCache
+  }
 }
 
 export function getMergedExercises() {
