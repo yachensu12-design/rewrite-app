@@ -1,0 +1,670 @@
+[
+  {
+    "id": "M1-001",
+    "mechanism": "M1",
+    "mechanismName": "自我消除",
+    "difficulty": 10,
+    "title": "注意「随便」",
+    "instruction": "今天如果有人问你想吃什么、想去哪里、想做什么，注意你有没有说「随便」或「都行」。不需要改变它，只需要注意到。",
+    "why": "你说「随便」的时候，往往不是真的没有偏好——而是你的身体在自动执行「不占空间」的程序。",
+    "completion_prompt": "今天你注意到了吗？",
+    "simplified_versions": [
+      { "difficulty": 5, "instruction": "今天回忆一下，你最近一次说「随便」或「都行」是什么时候？当时你真正想要的是什么？" }
+    ]
+  },
+  {
+    "id": "M1-002",
+    "mechanism": "M1",
+    "mechanismName": "自我消除",
+    "difficulty": 25,
+    "title": "说出一个偏好",
+    "instruction": "今天当有人问你意见时，说出你真正的偏好。不说「随便」，不说「都行」，说一个具体的选择。",
+    "why": "每一次说出真实偏好，都是在告诉你的神经系统：我的需求是安全的。",
+    "completion_prompt": "你说出来了吗？说的时候身体有什么感觉？",
+    "simplified_versions": [
+      { "difficulty": 12, "instruction": "在心里默默想出你的真实偏好，不需要说出口。只是练习「知道自己想要什么」。" }
+    ]
+  },
+  {
+    "id": "M1-003",
+    "mechanism": "M1",
+    "mechanismName": "自我消除",
+    "difficulty": 20,
+    "title": "点你想吃的",
+    "instruction": "今天吃饭的时候，点你真正想吃的东西。不点最便宜的，不点别人推荐的，点你自己最想要的。",
+    "why": "在小事上练习选择自己，是因为大事上的退让往往从这里开始。",
+    "completion_prompt": "你点了什么？是真正想要的吗？",
+    "simplified_versions": [
+      { "difficulty": 8, "instruction": "打开外卖 App，浏览菜单，找到你最想吃的那个——不需要真的下单。" }
+    ]
+  },
+  {
+    "id": "M1-004",
+    "mechanism": "M1",
+    "mechanismName": "自我消除",
+    "difficulty": 35,
+    "title": "不解释你的选择",
+    "instruction": "今天当你做了一个选择，如果有人问「为什么」，试着只说「因为我想」。不解释理由，不证明它是合理的。",
+    "why": "习惯性解释是在向别人申请「被允许」。你的选择不需要他人批准。",
+    "completion_prompt": "你说「因为我想」了吗？说完之后有什么感受？",
+    "simplified_versions": [
+      { "difficulty": 15, "instruction": "注意你有没有在做选择后自动开始解释的冲动。数一数今天发生了几次。" }
+    ]
+  },
+  {
+    "id": "M1-005",
+    "mechanism": "M1",
+    "mechanismName": "自我消除",
+    "difficulty": 40,
+    "title": "说「我不想」",
+    "instruction": "今天如果有人邀请你做一件你不想做的事，说「我不太想」。不需要给理由，不需要道歉。",
+    "why": "拒绝不需要理由，就像答应不需要理由一样。",
+    "completion_prompt": "你说了吗？说的时候身体有什么反应？",
+    "simplified_versions": [
+      { "difficulty": 18, "instruction": "在心里对那件你不想做的事说「我不想」。感受说出这三个字时身体的反应。" }
+    ]
+  },
+  {
+    "id": "M1-006",
+    "mechanism": "M1",
+    "mechanismName": "自我消除",
+    "difficulty": 55,
+    "title": "不压下不满",
+    "instruction": "今天如果有一个让你不舒服的瞬间，试着不压下去。可以皱眉、可以叹气、可以说「这让我有点不舒服」。",
+    "why": "每一次压下不满，都是在告诉身体：我的感受不重要。",
+    "completion_prompt": "今天你允许不满显现了吗？是什么让你不舒服？",
+    "simplified_versions": [
+      { "difficulty": 22, "instruction": "今天注意你有几次压下了不满。数一数就好，不需要改变。" }
+    ]
+  },
+  {
+    "id": "M1-007",
+    "mechanism": "M1",
+    "mechanismName": "自我消除",
+    "difficulty": 65,
+    "title": "主动提一个要求",
+    "instruction": "今天向一个人主动提一个小要求。比如「你能帮我带杯水吗」「你能把这个发给我吗」。不是你不能自己做——而是练习「我可以向别人提出需求」。",
+    "why": "向别人提要求，是在练习相信自己值得被照顾。",
+    "completion_prompt": "你提了什么要求？对方怎么回应的？",
+    "simplified_versions": [
+      { "difficulty": 28, "instruction": "想一个你想向别人提但还没提过的要求。只需要写下来。" }
+    ]
+  },
+  {
+    "id": "M1-008",
+    "mechanism": "M1",
+    "mechanismName": "自我消除",
+    "difficulty": 85,
+    "title": "告诉母亲你的感受",
+    "instruction": "下次你母亲否定你的感受时，试着说一句：「我就是累了。」不解释，不争辩。就是一句平静的陈述。",
+    "why": "在最难的关系里坚持自己的感受，是练习的最高级别。",
+    "completion_prompt": "你说了吗？说完之后发生了什么？",
+    "simplified_versions": [
+      { "difficulty": 40, "instruction": "在心里对她说「我就是累了」。感受说这句话时的身体反应。" }
+    ]
+  },
+  {
+    "id": "M2-001",
+    "mechanism": "M2",
+    "mechanismName": "情绪容器",
+    "difficulty": 10,
+    "title": "今天我照顾了谁",
+    "instruction": "睡前回忆一下今天的互动。有没有哪个瞬间，你压下了自己的感受，去照顾了别人的情绪？不需要改变，只需要看到。",
+    "why": "看到这个模式，是改变的第一步。",
+    "completion_prompt": "你照顾了谁的情绪？当时你自己的感受是什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M2-002",
+    "mechanism": "M2",
+    "mechanismName": "情绪容器",
+    "difficulty": 30,
+    "title": "不主动安慰",
+    "instruction": "今天如果有人在你面前抱怨或诉苦，试着不立刻安慰、不立刻给建议。就听着。注意你体内那个想要「帮忙」的冲动。",
+    "why": "你立刻安慰，有时是为了让自己舒服，而不是为了对方。",
+    "completion_prompt": "你忍住了吗？那个「想帮忙」的冲动有多强？",
+    "simplified_versions": [
+      { "difficulty": 12, "instruction": "注意你在别人诉苦时，身体的第一反应是什么。想安慰、想给建议、还是想逃？" }
+    ]
+  },
+  {
+    "id": "M2-003",
+    "mechanism": "M2",
+    "mechanismName": "情绪容器",
+    "difficulty": 35,
+    "title": "先问自己",
+    "instruction": "今天在回应别人之前，先在心里问一句：「我现在自己的感受是什么？」然后再决定要不要回应对方。",
+    "why": "你习惯先感知别人，再感知自己。这个练习颠倒顺序。",
+    "completion_prompt": "你问了自己吗？当时你的感受是什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M2-004",
+    "mechanism": "M2",
+    "mechanismName": "情绪容器",
+    "difficulty": 60,
+    "title": "延迟回母亲的消息",
+    "instruction": "今天如果你母亲给你发了不紧急的消息，试着延迟回复——不是不回，是晚几个小时回。注意你在这几个小时里的身体感受。愧疚感有多强？",
+    "why": "愧疚感的强度，反映了这个关系对你施加的隐性压力有多大。",
+    "completion_prompt": "你延迟了多久？那几个小时里你的感受是什么？",
+    "simplified_versions": [
+      { "difficulty": 25, "instruction": "想象一下你不回她消息的场景。你的身体有什么反应？" }
+    ]
+  },
+  {
+    "id": "M2-005",
+    "mechanism": "M2",
+    "mechanismName": "情绪容器",
+    "difficulty": 50,
+    "title": "说「我今天也不太好」",
+    "instruction": "今天如果有人需要你的情绪支持，但你自己也不好的时候，试着说：「我今天自己也不太好，可能没法很好地陪你。」",
+    "why": "说出自己的状态，是允许自己存在的一种方式。",
+    "completion_prompt": "你说了吗？说这句话时身体有什么感觉？",
+    "simplified_versions": [
+      { "difficulty": 20, "instruction": "在心里默念这句话。感受说出来的阻力有多大。" }
+    ]
+  },
+  {
+    "id": "M2-006",
+    "mechanism": "M2",
+    "mechanismName": "情绪容器",
+    "difficulty": 45,
+    "title": "让别人等你",
+    "instruction": "今天如果有人联系你需要情绪支持，你可以说「我现在有点忙，一小时后可以吗？」哪怕你并不忙。练习不把自己的时间自动交出去。",
+    "why": "你的时间和注意力不是自动属于别人的。",
+    "completion_prompt": "你让对方等了吗？等待的时候你有没有焦虑？",
+    "simplified_versions": [
+      { "difficulty": 18, "instruction": "今天注意你有没有在别人需要你的瞬间，自动停下自己正在做的事。" }
+    ]
+  },
+  {
+    "id": "M2-007",
+    "mechanism": "M2",
+    "mechanismName": "情绪容器",
+    "difficulty": 70,
+    "title": "拒绝做情绪垃圾桶",
+    "instruction": "如果一段关系里，对方总是倾倒情绪但从不问你的感受，今天试着在对方开始倾倒时说：「我现在没有余力听这些，我们改天聊？」",
+    "why": "你不是容器。你可以选择什么时候接收，接收多少。",
+    "completion_prompt": "你说了吗？对方的反应是什么？你自己的感受呢？",
+    "simplified_versions": [
+      { "difficulty": 35, "instruction": "想一段让你感觉像情绪垃圾桶的关系。写下你真正想说的话，不需要发出去。" }
+    ]
+  },
+  {
+    "id": "M2-008",
+    "mechanism": "M2",
+    "mechanismName": "情绪容器",
+    "difficulty": 80,
+    "title": "允许别人不舒服",
+    "instruction": "今天如果你做了一个让别人不开心的决定（拒绝、不配合、不回应），允许他们不舒服。不解释，不道歉，不急着修复。",
+    "why": "你不需要对别人的情绪负责。他们的不舒服是他们的，不是你造成的错。",
+    "completion_prompt": "你允许别人不舒服了吗？你自己的感受是什么？",
+    "simplified_versions": [
+      { "difficulty": 40, "instruction": "回忆一次你急着修复别人情绪的场景。如果你当时没有修复，会发生什么？" }
+    ]
+  },
+  {
+    "id": "M3-001",
+    "mechanism": "M3",
+    "mechanismName": "愤怒内折",
+    "difficulty": 10,
+    "title": "注意自我攻击",
+    "instruction": "今天注意你有没有在某个瞬间对自己说「我怎么又这样」「我真差劲」「都是我的问题」。数一数有几次。",
+    "why": "计数不是为了让你更自责，而是为了让你看到这个声音的频率。",
+    "completion_prompt": "今天数到几次？什么情境下出现的？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M3-002",
+    "mechanism": "M3",
+    "mechanismName": "愤怒内折",
+    "difficulty": 25,
+    "title": "换一个归因",
+    "instruction": "今天如果你发现自己在自我攻击，试着问一句：「如果这件事发生在我最好的朋友身上，我会觉得是她的问题吗？」",
+    "why": "你对自己的苛刻，往往远超你对别人的要求。",
+    "completion_prompt": "你问了自己这个问题吗？答案是什么？",
+    "simplified_versions": [
+      { "difficulty": 10, "instruction": "回忆最近一次自我攻击的瞬间，用朋友的视角重新看一遍。" }
+    ]
+  },
+  {
+    "id": "M3-003",
+    "mechanism": "M3",
+    "mechanismName": "愤怒内折",
+    "difficulty": 40,
+    "title": "允许不满停留",
+    "instruction": "今天如果有人做了让你不舒服的事，在你的第一反应（自我攻击）出现后，试着让另一个声音也出现：「也许这不是我的问题。」让两个声音并存 10 秒钟。",
+    "why": "你不需要立刻决定是谁的问题。先让两种可能并存。",
+    "completion_prompt": "你让两个声音并存了吗？是什么感觉？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M3-004",
+    "mechanism": "M3",
+    "mechanismName": "愤怒内折",
+    "difficulty": 35,
+    "title": "写下你的愤怒",
+    "instruction": "打开备忘录，写下一件让你愤怒的事。不需要理性，不需要分析，不需要公平。就是你生气了，写下来。写完不需要做任何事。",
+    "why": "愤怒不表达，就会变成对自己的攻击。写下来是第一步。",
+    "completion_prompt": "你写了吗？写的过程中身体有什么变化？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M3-005",
+    "mechanism": "M3",
+    "mechanismName": "愤怒内折",
+    "difficulty": 55,
+    "title": "对一件小事说「不对」",
+    "instruction": "今天对一件让你不满的小事直接说出来。不需要发火，平静地说「这个不对」或「这让我不舒服」就够了。",
+    "why": "向外表达的第一步不需要是愤怒，只需要是真实。",
+    "completion_prompt": "你说了吗？说的时候身体有什么感觉？",
+    "simplified_versions": [
+      { "difficulty": 22, "instruction": "在心里说「这个不对」。感受说出这句话时身体的变化。" }
+    ]
+  },
+  {
+    "id": "M3-006",
+    "mechanism": "M3",
+    "mechanismName": "愤怒内折",
+    "difficulty": 20,
+    "title": "找到愤怒的来源",
+    "instruction": "今天如果你对自己感到失望或烦躁，停下来问一句：「在我攻击自己之前，是谁或什么事让我先感到不满？」试着找到最初的来源。",
+    "why": "自我攻击往往是愤怒绕了一圈回来的结果。",
+    "completion_prompt": "你找到来源了吗？是什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M3-007",
+    "mechanism": "M3",
+    "mechanismName": "愤怒内折",
+    "difficulty": 50,
+    "title": "用身体感受愤怒",
+    "instruction": "今天当你感到愤怒或烦躁时，先不要做任何事。把注意力放在身体上——哪里紧绷？胸口、肩膀、还是下颌？停留 30 秒，只是感受。",
+    "why": "愤怒是身体的信号，不是需要立刻压制的东西。",
+    "completion_prompt": "你感受到了吗？愤怒在你身体的哪里？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M3-008",
+    "mechanism": "M3",
+    "mechanismName": "愤怒内折",
+    "difficulty": 70,
+    "title": "直接表达不满",
+    "instruction": "今天对一个你在乎的人，用平静的语气说出一件让你不满的事。不是抱怨，不是指责，就是「你上次那样做，让我感到不舒服」。",
+    "why": "在亲密关系里表达不满，是最难也最重要的一步。",
+    "completion_prompt": "你说了吗？对方怎么回应的？你的感受是什么？",
+    "simplified_versions": [
+      { "difficulty": 35, "instruction": "把你想对那个人说的话写下来。不需要发出去。" }
+    ]
+  },
+  {
+    "id": "M4-001",
+    "mechanism": "M4",
+    "mechanismName": "价值外包",
+    "difficulty": 15,
+    "title": "看一眼银行余额",
+    "instruction": "打开银行 App，看一眼余额。不分析，不评判。看完之后注意你身体的感受——紧缩？焦虑？还是比想象中平静？",
+    "why": "你对数字的身体反应，反映了你赋予它多少定义自我的权力。",
+    "completion_prompt": "看完之后你感觉怎么样？",
+    "simplified_versions": [
+      { "difficulty": 5, "instruction": "想象一下你打开银行 App 看到余额的场景。你的身体有什么反应？" }
+    ]
+  },
+  {
+    "id": "M4-002",
+    "mechanism": "M4",
+    "mechanismName": "价值外包",
+    "difficulty": 30,
+    "title": "不算他花了多少",
+    "instruction": "今天如果有人请你吃饭或为你花钱，试着不在心里默默计算金额。把注意力放在「我和他在一起的感觉怎么样」而不是「他花了多少」。",
+    "why": "用金钱衡量关系，是因为你还不确定自己是否值得被照顾。",
+    "completion_prompt": "你有没有忍不住算？你们在一起的感觉怎么样？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M4-003",
+    "mechanism": "M4",
+    "mechanismName": "价值外包",
+    "difficulty": 25,
+    "title": "用钱善待自己",
+    "instruction": "今天用自己的钱买一样让你开心的东西。买的时候在心里说：「这是我自己挣的钱，我在用它照顾我自己。」",
+    "why": "把钱花在自己身上，是在用行动告诉自己：我值得。",
+    "completion_prompt": "你买了什么？买的时候心里是什么感觉？",
+    "simplified_versions": [
+      { "difficulty": 10, "instruction": "想一样你想为自己买但一直没买的东西。只是写下来。" }
+    ]
+  },
+  {
+    "id": "M4-004",
+    "mechanism": "M4",
+    "mechanismName": "价值外包",
+    "difficulty": 35,
+    "title": "不比较",
+    "instruction": "今天如果你发现自己在和别人比较，停下来 3 秒钟，对自己说：「她的拥有不会减少我的价值。」",
+    "why": "别人拥有的东西，不会从你这里带走任何东西。",
+    "completion_prompt": "你今天比较了几次？说那句话的时候有什么感觉？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M4-005",
+    "mechanism": "M4",
+    "mechanismName": "价值外包",
+    "difficulty": 70,
+    "title": "为自己争取一笔钱",
+    "instruction": "处理一件你一直「嫌麻烦」而没去做的和钱相关的事：申诉一笔不合理的扣费、要求退款、追回押金。哪怕只是发一封邮件。",
+    "why": "为自己争取金钱，是在练习「我的利益值得被维护」。",
+    "completion_prompt": "你做了吗？第一步是什么？",
+    "simplified_versions": [
+      { "difficulty": 30, "instruction": "找到那件事的第一步（比如找到客服电话号码），写下来。" }
+    ]
+  },
+  {
+    "id": "M4-006",
+    "mechanism": "M4",
+    "mechanismName": "价值外包",
+    "difficulty": 20,
+    "title": "注意刷数据的冲动",
+    "instruction": "今天注意你有没有刷粉丝数、点赞、收入数据或任何外部数字。每次出现这个冲动时，在心里问一句：「我在找什么？」",
+    "why": "反复查看外部数字，是在向外部寻求「我足够好」的确认。",
+    "completion_prompt": "今天你刷了几次？你在找什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M4-007",
+    "mechanism": "M4",
+    "mechanismName": "价值外包",
+    "difficulty": 45,
+    "title": "记录一件内在满足的事",
+    "instruction": "今天做完一件事之后，不看任何外部反馈，先问自己：「我自己对这件事满意吗？」把你的内在评价写下来。",
+    "why": "练习在外部反馈到来之前，先给自己一个评价。",
+    "completion_prompt": "你对自己的表现满意吗？和外部反馈相比，哪个更真实？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M4-008",
+    "mechanism": "M4",
+    "mechanismName": "价值外包",
+    "difficulty": 60,
+    "title": "一天不看收入数据",
+    "instruction": "今天一整天不打开任何收入相关的数据（销售额、打赏、收益）。注意你「想看」的冲动出现了几次。",
+    "why": "数字的波动不定义你的价值，但你的身体可能还不相信这件事。",
+    "completion_prompt": "你做到了吗？那个想看的冲动有多强？",
+    "simplified_versions": [
+      { "difficulty": 25, "instruction": "推迟 4 小时再看。记录这 4 小时里你想看的次数。" }
+    ]
+  },
+  {
+    "id": "M5-001",
+    "mechanism": "M5",
+    "mechanismName": "幻想系统",
+    "difficulty": 10,
+    "title": "标记幻想",
+    "instruction": "今天注意你有没有开始幻想一段关系。不需要打断它，只需要在心里说：「我在幻想了。」",
+    "why": "你不需要对抗幻想，只需要先看到它。",
+    "completion_prompt": "你标记到幻想了吗？是关于谁的？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M5-002",
+    "mechanism": "M5",
+    "mechanismName": "幻想系统",
+    "difficulty": 20,
+    "title": "回到身体",
+    "instruction": "当你发现自己陷入幻想或反复品味旧关系时，把注意力拉回你的身体——你坐在哪里、脚踩着什么、空气是什么温度。停留 30 秒。",
+    "why": "幻想存在于头脑里。身体只存在于此刻。",
+    "completion_prompt": "你做了吗？回到身体之后是什么感觉？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M5-003",
+    "mechanism": "M5",
+    "mechanismName": "幻想系统",
+    "difficulty": 35,
+    "title": "描述他的真实行为",
+    "instruction": "如果你正在对某个人产生强烈的感觉，拿出手机在备忘录里写下 3 件他实际做过的事。不是你想象中的，是真实发生的。看看这 3 件事和你脑子里的故事之间的差距有多大。",
+    "why": "幻想系统会用有限的真实素材，构建一个完整的理想剧本。",
+    "completion_prompt": "你写了 3 件真实的事吗？和你脑子里的故事相比，差距有多大？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M5-004",
+    "mechanism": "M5",
+    "mechanismName": "幻想系统",
+    "difficulty": 45,
+    "title": "不回味",
+    "instruction": "今天如果你发现自己在回味一段旧关系，试着在 5 分钟内把注意力转移到一件需要动手的事情上——洗碗、整理桌面、走路。不是逃避，是练习不喂养幻想引擎。",
+    "why": "每一次回味都在给幻想添燃料。",
+    "completion_prompt": "你转移了吗？做了什么事？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M5-005",
+    "mechanism": "M5",
+    "mechanismName": "幻想系统",
+    "difficulty": 55,
+    "title": "一天不看他的社交媒体",
+    "instruction": "如果你正在对某个人上头，今天一整天不打开他的社交媒体主页。注意你想去看的冲动出现了几次。每次出现时，在心里说：「那是幻想在找燃料。」",
+    "why": "你每次去看，都是在喂养那个幻想，而不是在靠近真实的他。",
+    "completion_prompt": "你做到了吗？冲动出现了几次？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M5-006",
+    "mechanism": "M5",
+    "mechanismName": "幻想系统",
+    "difficulty": 30,
+    "title": "幻想和现实的清单",
+    "instruction": "想一个你有强烈感觉的人。在纸上画两列：左边写「我幻想他是什么样的」，右边写「他实际表现出来的」。",
+    "why": "把两列放在一起，幻想和现实的落差会变得可见。",
+    "completion_prompt": "两列之间的差距有多大？看到这个差距，你有什么感受？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M5-007",
+    "mechanism": "M5",
+    "mechanismName": "幻想系统",
+    "difficulty": 50,
+    "title": "问自己在幻想什么",
+    "instruction": "今天当你开始幻想一段关系的未来时，停下来问：「在这个幻想里，我得到了什么？」试着说出那个核心需求。",
+    "why": "幻想满足的是一个真实的需求。找到那个需求，比打断幻想更重要。",
+    "completion_prompt": "你在幻想里得到了什么？那个需求是什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M5-008",
+    "mechanism": "M5",
+    "mechanismName": "幻想系统",
+    "difficulty": 65,
+    "title": "停止一次接触的冲动",
+    "instruction": "今天如果你有冲动要联系某个存在于你幻想中的人，先等 2 小时。在这 2 小时里，写下你想联系他的真实原因。",
+    "why": "冲动联系往往是幻想在驱动，而不是真实的连接需求。",
+    "completion_prompt": "你等了吗？写下的原因是什么？2 小时后冲动还在吗？",
+    "simplified_versions": [
+      { "difficulty": 30, "instruction": "等 30 分钟。这 30 分钟里注意你的身体反应。" }
+    ]
+  },
+  {
+    "id": "M6-001",
+    "mechanism": "M6",
+    "mechanismName": "信任有效期",
+    "difficulty": 15,
+    "title": "注意理想化",
+    "instruction": "今天注意你有没有把某个人抬到很高的位置。问自己：「这是我在看他，还是在看我为他写的剧本？」",
+    "why": "理想化是一种对真实的人关上眼睛的方式。",
+    "completion_prompt": "你注意到了吗？那个人是谁？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M6-002",
+    "mechanism": "M6",
+    "mechanismName": "信任有效期",
+    "difficulty": 25,
+    "title": "列出他的普通特征",
+    "instruction": "想一个你正在理想化的人，列出他 3 个很普通的特征（比如他也会赖床、他的衣品其实一般、他说话有时候很无聊）。",
+    "why": "看到一个人的普通之处，是真正开始看到这个人的第一步。",
+    "completion_prompt": "你列出来了吗？看到这些普通特征，感觉怎么样？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M6-003",
+    "mechanism": "M6",
+    "mechanismName": "信任有效期",
+    "difficulty": 40,
+    "title": "不急于下结论",
+    "instruction": "今天如果有人做了一件让你失望的事，在你的翻译器把它翻译成「他果然不在意我」之前，试着想出 2 个其他的可能解释。",
+    "why": "你的第一个解释往往来自旧的剧本，不一定是真实的。",
+    "completion_prompt": "你想出了哪 2 个其他解释？哪个更可能是真的？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M6-004",
+    "mechanism": "M6",
+    "mechanismName": "信任有效期",
+    "difficulty": 20,
+    "title": "注意「完美初期」",
+    "instruction": "今天如果你在一段新关系或新连接的蜜月期，注意你有没有在说「他和别人不一样」「我终于遇到了」。只是注意这个声音。",
+    "why": "「和别人不一样」有时是理想化的开始，而不是判断。",
+    "completion_prompt": "你注意到这个声音了吗？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M6-005",
+    "mechanism": "M6",
+    "mechanismName": "信任有效期",
+    "difficulty": 35,
+    "title": "允许他是普通人",
+    "instruction": "今天对一个你在乎的人，刻意去找 1 件他让你有点失望或无聊的事。不是为了否定他，而是为了练习看到真实的他。",
+    "why": "你能同时看到一个人的好和普通，才算真正看见他。",
+    "completion_prompt": "你找到了吗？是什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M6-006",
+    "mechanism": "M6",
+    "mechanismName": "信任有效期",
+    "difficulty": 55,
+    "title": "在失望后不翻盘",
+    "instruction": "如果你最近对某人有失望感，试着在今天不把这种失望翻转成「其实他很好」或「是我太敏感了」。允许失望作为一种信息存在，不急着消除它。",
+    "why": "你习惯在失望来临时立刻找理由原谅，这让你看不清楚这段关系的真实面貌。",
+    "completion_prompt": "你允许失望存在了吗？那个失望在告诉你什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M6-007",
+    "mechanism": "M6",
+    "mechanismName": "信任有效期",
+    "difficulty": 45,
+    "title": "观察而不是解读",
+    "instruction": "今天和一个你在乎的人互动时，试着只观察他的具体行为，不立刻解读动机。他说了什么、做了什么——就停在这里。",
+    "why": "解读是幻想系统和信任有效期共同工作的地方。练习停在事实上。",
+    "completion_prompt": "你观察到了什么行为？你没有解读的部分是什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M6-008",
+    "mechanism": "M6",
+    "mechanismName": "信任有效期",
+    "difficulty": 70,
+    "title": "在关系变淡时不结案",
+    "instruction": "如果你最近感觉某段关系在慢慢变淡，试着不立刻给它下结论（「他不在乎我了」「这段关系要结束了」）。只是观察，等更多信息出现。",
+    "why": "过早结案是「信任有效期」的核心动作——你先下结论，然后用行为验证它。",
+    "completion_prompt": "你忍住结案了吗？你在等什么信息？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M7-001",
+    "mechanism": "M7",
+    "mechanismName": "将就模板",
+    "difficulty": 10,
+    "title": "注意「算了」",
+    "instruction": "今天注意你有没有在某个瞬间对自己说「算了」「就这样吧」「也行吧」。注意那个瞬间你真正的感受是什么——是真的无所谓，还是你在回避面对不满？",
+    "why": "「算了」有时候是智慧，有时候是将就。你需要能区分两者。",
+    "completion_prompt": "你说了几次「算了」？当时真正的感受是什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M7-002",
+    "mechanism": "M7",
+    "mechanismName": "将就模板",
+    "difficulty": 35,
+    "title": "不降格",
+    "instruction": "今天如果你在某段关系或某件事里想要降低标准，停下来问自己：「我真正想要的是什么？」把真正想要的写下来。",
+    "why": "写下来是为了让你知道你在放弃什么，而不是默默放弃。",
+    "completion_prompt": "你写下来了吗？真正想要的是什么？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M7-003",
+    "mechanism": "M7",
+    "mechanismName": "将就模板",
+    "difficulty": 50,
+    "title": "拒绝一个将就的选择",
+    "instruction": "今天拒绝一个你本来会「将就」接受的选择。可以是很小的事——换一个你不喜欢的菜、退回一件不合适的衣服、对一个不想去的聚会说「不去了」。",
+    "why": "从小事开始练习不将就，是为了在大事上有惯性。",
+    "completion_prompt": "你拒绝了什么？拒绝的时候是什么感觉？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M7-004",
+    "mechanism": "M7",
+    "mechanismName": "将就模板",
+    "difficulty": 65,
+    "title": "忍受一次「空」",
+    "instruction": "今天留出 10 分钟，什么都不做。不看手机、不听音乐、不分析自己。就坐着。注意那个「空」的感觉出现时，你的身体想要做什么。",
+    "why": "将就往往是为了填满「空」——因为空让人不安全。",
+    "completion_prompt": "你坐了多久？身体想要做什么？",
+    "simplified_versions": [
+      { "difficulty": 30, "instruction": "留出 3 分钟。坐着，不做任何事。" }
+    ]
+  },
+  {
+    "id": "M7-005",
+    "mechanism": "M7",
+    "mechanismName": "将就模板",
+    "difficulty": 75,
+    "title": "不主动联系",
+    "instruction": "如果你正在一段让你不舒服的关系里，今天不主动联系他。不是演戏，不是试探，就是不联系。注意你在不联系的过程中身体的反应。",
+    "why": "将就的人会在不舒服中继续联系，因为断裂比不适更可怕。",
+    "completion_prompt": "你做到了吗？身体有什么反应？",
+    "simplified_versions": [
+      { "difficulty": 40, "instruction": "推迟 2 小时再联系。这 2 小时里注意你的感受。" }
+    ]
+  },
+  {
+    "id": "M7-006",
+    "mechanism": "M7",
+    "mechanismName": "将就模板",
+    "difficulty": 20,
+    "title": "注意将就的瞬间",
+    "instruction": "今天注意你在哪些瞬间做了将就的选择——选了自己不太想要的，接受了让自己不舒服的安排，或者压下了对某件事的不满足。数一数。",
+    "why": "将就是一种习惯，往往在不知不觉中发生。",
+    "completion_prompt": "你数到了几次？哪一次让你印象最深？",
+    "simplified_versions": []
+  },
+  {
+    "id": "M7-007",
+    "mechanism": "M7",
+    "mechanismName": "将就模板",
+    "difficulty": 45,
+    "title": "说出你真正想要的",
+    "instruction": "今天在一段关系里，对对方说出你真正想要的一件事。不是暗示，不是希望对方猜到，而是直接说：「我想要……」",
+    "why": "将就的人不开口，因为开口意味着可能被拒绝，而拒绝意味着关系的裂缝。",
+    "completion_prompt": "你说了吗？说出来之后发生了什么？",
+    "simplified_versions": [
+      { "difficulty": 20, "instruction": "写下你想要的那件事，不需要说出口。" }
+    ]
+  },
+  {
+    "id": "M7-008",
+    "mechanism": "M7",
+    "mechanismName": "将就模板",
+    "difficulty": 85,
+    "title": "面对一次断裂",
+    "instruction": "如果你正在一段让你不舒服但又不敢离开的关系里，今天允许自己想象「如果这段关系结束了，会怎样？」不需要采取行动，只是想象，然后感受身体的反应。",
+    "why": "将就的核心恐惧是断裂本身，而不是关系的质量。这个练习帮你感受那个恐惧的真实大小。",
+    "completion_prompt": "你想象了吗？身体有什么反应？那个恐惧有多大？",
+    "simplified_versions": [
+      { "difficulty": 45, "instruction": "写下这段关系里让你最不舒服的一件事。只是写，不需要决定任何事。" }
+    ]
+  }
+]
