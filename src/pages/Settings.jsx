@@ -6,6 +6,8 @@ export default function Settings() {
   const [permission, setPermission] = useState('default')
   const [subscription, setSubscription] = useState(null)
   const [testStatus, setTestStatus] = useState('')
+  const [apiKeyInput, setApiKeyInput] = useState('')
+  const [showApiKeyInput, setShowApiKeyInput] = useState(false)
 
   useEffect(() => {
     setSettings(getSettings())
@@ -100,6 +102,13 @@ export default function Settings() {
     }
   }
 
+  const handleSaveApiKey = () => {
+    const newSettings = { ...settings, kimi_api_key: apiKeyInput }
+    saveSettings(newSettings)
+    setSettings(newSettings)
+    setShowApiKeyInput(false)
+  }
+
   if (!settings) {
     return (
       <div className="pt-8">
@@ -111,6 +120,61 @@ export default function Settings() {
   return (
     <div className="pt-8">
       <h1 className="text-xl font-medium mb-6">设置</h1>
+
+      {/* Kimi API Key 设置 */}
+      <div className="bg-white rounded-2xl p-5 mb-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+        <h2 className="font-medium mb-4">AI 周报设置</h2>
+
+        <div className="space-y-3">
+          {!showApiKeyInput ? (
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm">Kimi API Key</p>
+                <p className="text-xs text-stone-400">
+                  {settings.kimi_api_key ? '已设置' : '未设置，无法生成周报'}
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  setApiKeyInput(settings.kimi_api_key || '')
+                  setShowApiKeyInput(true)
+                }}
+                className="px-4 py-2 rounded-full text-sm border border-stone-200"
+              >
+                {settings.kimi_api_key ? '修改' : '设置'}
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <input
+                type="password"
+                value={apiKeyInput}
+                onChange={(e) => setApiKeyInput(e.target.value)}
+                placeholder="sk-..."
+                className="w-full px-4 py-2 rounded-xl border border-stone-200 text-sm focus:outline-none focus:ring-2 focus:ring-amber-700/20"
+              />
+              <div className="flex gap-2">
+                <button
+                  onClick={handleSaveApiKey}
+                  className="flex-1 py-2 rounded-full text-sm text-white"
+                  style={{ backgroundColor: '#B07A48' }}
+                >
+                  保存
+                </button>
+                <button
+                  onClick={() => setShowApiKeyInput(false)}
+                  className="flex-1 py-2 rounded-full text-sm border border-stone-200"
+                >
+                  取消
+                </button>
+              </div>
+              <p className="text-xs text-stone-400">
+                从 platform.moonshot.cn 获取 API Key
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
 
       {/* 通知设置 */}
       <div className="bg-white rounded-2xl p-5 mb-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>

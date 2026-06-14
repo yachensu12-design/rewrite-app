@@ -153,6 +153,7 @@ export default function Home() {
       id: exerciseId,
       status,
       mechanism,
+      feeling_text: feeling,
       timestamp: new Date().toISOString()
     })
     saveLog(log)

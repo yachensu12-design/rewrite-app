@@ -27,6 +27,14 @@ export default function Layout() {
             成长
           </NavLink>
           <NavLink
+            to="/weekly"
+            className={({ isActive }) =>
+              `flex-1 py-3 text-center text-sm ${isActive ? 'text-amber-800' : 'text-stone-400'}`
+            }
+          >
+            周报
+          </NavLink>
+          <NavLink
             to="/settings"
             className={({ isActive }) =>
               `flex-1 py-3 text-center text-sm ${isActive ? 'text-amber-800' : 'text-stone-400'}`

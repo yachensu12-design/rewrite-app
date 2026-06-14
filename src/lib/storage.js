@@ -48,7 +48,7 @@ export function savePlan(date, plan) {
 
 export function getSettings() {
   const raw = localStorage.getItem(KEYS.SETTINGS)
-  const defaults = { notification_time: '08:00', start_date: new Date().toISOString().slice(0, 10) }
+  const defaults = { notification_time: '08:00', start_date: new Date().toISOString().slice(0, 10), kimi_api_key: '' }
   return raw ? { ...defaults, ...JSON.parse(raw) } : defaults
 }
 
