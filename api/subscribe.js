@@ -1,4 +1,5 @@
-const subscriptions = []
+// 内存存储 - 仅用于测试，部署后会清空
+let subscriptions = []
 
 export default function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*')

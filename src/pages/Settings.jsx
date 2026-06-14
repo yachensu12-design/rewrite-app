@@ -5,6 +5,7 @@ export default function Settings() {
   const [settings, setSettings] = useState(null)
   const [permission, setPermission] = useState('default')
   const [subscription, setSubscription] = useState(null)
+  const [testStatus, setTestStatus] = useState('')
 
   useEffect(() => {
     setSettings(getSettings())
@@ -71,6 +72,34 @@ export default function Settings() {
     }
   }
 
+  const testLocalPush = async () => {
+    // 本地测试：直接触发 Service Worker 通知
+    if ('serviceWorker' in navigator) {
+      const registration = await navigator.serviceWorker.ready
+      registration.showNotification('覆写 - 测试推送', {
+        body: '这是一条测试通知。如果看到这个，说明推送功能正常！',
+        icon: '/icon-192.png',
+        badge: '/icon-192.png',
+        tag: 'test-notification'
+      })
+    }
+  }
+
+  const testBackendPush = async () => {
+    setTestStatus('发送中...')
+    try {
+      const res = await fetch('/api/push', { method: 'POST' })
+      const data = await res.json()
+      if (data.success) {
+        setTestStatus(`✅ 发送成功：${data.sent} 条，失败：${data.failed} 条`)
+      } else {
+        setTestStatus(`❌ 错误：${data.error}`)
+      }
+    } catch (err) {
+      setTestStatus(`❌ 请求失败：${err.message}`)
+    }
+  }
+
   if (!settings) {
     return (
       <div className="pt-8">
@@ -113,9 +142,28 @@ export default function Settings() {
           </div>
 
           {subscription && (
-            <p className="text-xs text-emerald-600">
-              已开启，明天早上 8:00 会收到提醒
-            </p>
+            <>
+              <p className="text-xs text-emerald-600">
+                已开启，明天早上 8:00 会收到提醒
+              </p>
+              <div className="flex gap-2 mt-3">
+                <button
+                  onClick={testLocalPush}
+                  className="px-4 py-2 rounded-full text-sm border border-amber-700 text-amber-700"
+                >
+                  测试推送（本地）
+                </button>
+                <button
+                  onClick={testBackendPush}
+                  className="px-4 py-2 rounded-full text-sm bg-amber-700 text-white"
+                >
+                  测试推送（后端）
+                </button>
+              </div>
+              {testStatus && (
+                <p className="text-xs text-stone-500 mt-2">{testStatus}</p>
+              )}
+            </>
           )}
         </div>
       </div>

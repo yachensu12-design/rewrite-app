@@ -52,3 +52,37 @@ self.addEventListener('fetch', (event) => {
     })
   )
 })
+
+// 处理推送通知
+self.addEventListener('push', (event) => {
+  let data = {}
+  try {
+    data = event.data.json()
+  } catch {
+    data = {
+      title: '覆写',
+      body: '今日练习已准备好',
+      icon: '/icon-192.png'
+    }
+  }
+
+  const options = {
+    body: data.body || '今日练习已准备好',
+    icon: data.icon || '/icon-192.png',
+    badge: data.badge || '/icon-192.png',
+    tag: data.tag || 'daily-exercise',
+    requireInteraction: false
+  }
+
+  event.waitUntil(
+    self.registration.showNotification(data.title || '覆写', options)
+  )
+})
+
+// 处理通知点击
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close()
+  event.waitUntil(
+    clients.openWindow('/')
+  )
+})
