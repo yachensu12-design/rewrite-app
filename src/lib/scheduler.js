@@ -157,8 +157,8 @@ function shouldGenerateDynamic(exercises, mechanism, progress) {
     })
   })
 
-  // 如果固定练习完成了 70% 以上，且动态练习少于 3 个，则生成
-  const fixedThreshold = Math.floor(mechanismExercises.length * 0.7)
+  // 测试模式：完成 1 道就触发（生产环境改回 0.7）
+  const fixedThreshold = 1  // Math.floor(mechanismExercises.length * 0.7)
   return completedFixedCount >= fixedThreshold && dynamicExercises.length < 3
 }
 
