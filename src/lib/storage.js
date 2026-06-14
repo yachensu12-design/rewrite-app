@@ -19,7 +19,6 @@ const DEFAULT_PROGRESS = {
 export function getProgress() {
   const raw = localStorage.getItem(KEYS.PROGRESS)
   if (raw) return JSON.parse(raw)
-  // 首次访问，初始化并保存
   saveProgress(DEFAULT_PROGRESS)
   return { ...DEFAULT_PROGRESS }
 }
@@ -77,7 +76,6 @@ export function getDayNumber() {
   return diff + 1
 }
 
-// 机制名称映射
 export const MECHANISM_NAMES = {
   M1: { name: '自我消除', desc: '练习表达真实需求、不缩小自己' },
   M2: { name: '情绪容器', desc: '练习觉察自己在照顾谁的情绪' },
@@ -88,7 +86,6 @@ export const MECHANISM_NAMES = {
   M7: { name: '将就模板', desc: '练习忍受断裂的不适、为自己争取' }
 }
 
-// 使用 Kimi API 生成动态练习
 export async function generateDynamicExercise(mechanism, waterLevel, recentFeelings) {
   const settings = getSettings()
   if (!settings.kimi_api_key) {
@@ -96,14 +93,17 @@ export async function generateDynamicExercise(mechanism, waterLevel, recentFeeli
   }
 
   const mechanismInfo = MECHANISM_NAMES[mechanism]
+  const stage = waterLevel <= 30 ? '入门阶段' : waterLevel <= 60 ? '进阶阶段' : '深入阶段'
+  const feelingsText = recentFeelings.length > 0 ? recentFeelings.join('；') : '暂无'
+  const difficultyDesc = waterLevel <= 30 ? '简单，以觉察为主' : waterLevel <= 60 ? '中等，需要一些行动' : '较难，需要面对不适'
 
   const prompt = `你是一位专业的心理行为练习设计师。
 
 请为用户生成一道个性化的心理行为练习。
 
 练习主题：${mechanismInfo.name}（${mechanismInfo.desc}）
-用户当前成长阶段：${waterLevel <= 30 ? '入门阶段' : waterLevel <= 60 ? '进阶阶段' : '深入阶段'}
-用户近期感受记录：${recentFeelings.length > 0 ? recentFeelings.join('；') : '暂无'}
+用户当前成长阶段：${stage}
+用户近期感受记录：${feelingsText}
 
 请严格按照以下 JSON 格式返回（不要包含任何其他文字）：
 {
@@ -114,11 +114,11 @@ export async function generateDynamicExercise(mechanism, waterLevel, recentFeeli
 }
 
 要求：
-1. 练习难度要适合用户的成长阶段（${waterLevel <= 30 ? '简单，以觉察为主' : waterLevel <= 60 ? '中等，需要一些行动' : '较难，需要面对不适'}）
+1. 练习难度要适合用户的成长阶段（${difficultyDesc}）
 2. 标题要简洁有力
 3. instruction 要具体可操作
 4. why 要温暖、不评判
-5. 不要和常见练习重复`}
+5. 不要和常见练习重复`
 
   const response = await fetch('https://api.moonshot.cn/v1/chat/completions', {
     method: 'POST',
@@ -143,17 +143,15 @@ export async function generateDynamicExercise(mechanism, waterLevel, recentFeeli
   const data = await response.json()
   const content = data.choices[0]?.message?.content || ''
 
-  // 解析 JSON
   try {
     const jsonMatch = content.match(/\{[\s\S]*\}/)
     if (!jsonMatch) throw new Error('返回格式错误')
     const exercise = JSON.parse(jsonMatch[0])
 
-    // 生成唯一 ID
     const dynamicExercises = getDynamicExercises()
     const dynamicCount = Object.keys(dynamicExercises).filter(k => k.startsWith(mechanism)).length
 
-    return {
+    const result = {
       id: `${mechanism}-D${String(dynamicCount + 1).padStart(3, '0')}`,
       mechanism,
       mechanismName: mechanismInfo.name,
@@ -161,6 +159,8 @@ export async function generateDynamicExercise(mechanism, waterLevel, recentFeeli
       isDynamic: true,
       ...exercise
     }
+
+    return result
   } catch (e) {
     console.error('解析练习失败:', content)
     throw new Error('解析生成的练习失败')
