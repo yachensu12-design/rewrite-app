@@ -82,7 +82,8 @@ export default function WeeklyReport() {
       }))
 
     } catch (err) {
-      setError(err.message)
+      console.error('生成周报错误:', err)
+      setError(err.message || '生成失败，请检查 API Key 和网络')
     }
 
     setLoading(false)
