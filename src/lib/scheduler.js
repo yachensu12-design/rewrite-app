@@ -1,4 +1,4 @@
-import { getProgress, getLog, getPlan, today, getDynamicExercises } from './storage'
+import { getProgress, getLog, getPlan, today, getDynamicExercises, saveDynamicExercises, generateDynamicExercise } from './storage'
 
 let exercisesCache = null
 
@@ -138,4 +138,77 @@ export function generateDailyPlan(exercises, progress) {
       simplified_index: e.simplified_index || 0
     }))
   }
+}
+
+// 检查某机制是否需要生成动态练习
+function shouldGenerateDynamic(exercises, mechanism, progress) {
+  const mechanismExercises = exercises.filter(e => e.mechanism === mechanism && !e.isDynamic)
+  const dynamicExercises = exercises.filter(e => e.mechanism === mechanism && e.isDynamic)
+  const log = getLog()
+
+  // 获取该机制已完成的固定练习数量
+  let completedFixedCount = 0
+  Object.values(log).forEach(dayLog => {
+    dayLog.forEach(entry => {
+      if (entry.mechanism === mechanism && entry.status === 'completed') {
+        const ex = mechanismExercises.find(e => e.id === entry.id || entry.id.startsWith(e.id))
+        if (ex) completedFixedCount++
+      }
+    })
+  })
+
+  // 如果固定练习完成了 70% 以上，且动态练习少于 3 个，则生成
+  const fixedThreshold = Math.floor(mechanismExercises.length * 0.7)
+  return completedFixedCount >= fixedThreshold && dynamicExercises.length < 3
+}
+
+// 获取最近感受记录
+function getRecentFeelings(mechanism, limit = 3) {
+  const log = getLog()
+  const feelings = []
+
+  Object.entries(log)
+    .sort(([a], [b]) => b.localeCompare(a))
+    .slice(0, 7) // 最近7天
+    .forEach(([date, entries]) => {
+      entries.forEach(entry => {
+        if (entry.mechanism === mechanism && entry.feeling_text) {
+          feelings.push(entry.feeling_text)
+        }
+      })
+    })
+
+  return feelings.slice(0, limit)
+}
+
+// 检查并生成动态练习
+export async function checkAndGenerateDynamicExercises(exercises, progress) {
+  const mechanisms = ['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7']
+  const dynamicExercises = getDynamicExercises()
+  let generated = false
+
+  for (const mechanism of mechanisms) {
+    if (shouldGenerateDynamic(exercises, mechanism, progress)) {
+      try {
+        const waterLevel = progress[mechanism]?.water_level || 10
+        const recentFeelings = getRecentFeelings(mechanism)
+
+        console.log(`正在为 ${mechanism} 生成动态练习...`)
+        const newExercise = await generateDynamicExercise(mechanism, waterLevel, recentFeelings)
+
+        // 保存到动态练习库
+        dynamicExercises[newExercise.id] = newExercise
+        generated = true
+        console.log(`已生成动态练习: ${newExercise.id}`)
+      } catch (err) {
+        console.error(`生成 ${mechanism} 动态练习失败:`, err)
+      }
+    }
+  }
+
+  if (generated) {
+    saveDynamicExercises(dynamicExercises)
+  }
+
+  return generated
 }

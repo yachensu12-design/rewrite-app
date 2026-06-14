@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { loadExercises, getMergedExercises, generateDailyPlan } from '../lib/scheduler'
+import { loadExercises, getMergedExercises, generateDailyPlan, checkAndGenerateDynamicExercises } from '../lib/scheduler'
 import { getPlan, savePlan, getProgress, saveProgress, getLog, saveLog, today, getDayNumber } from '../lib/storage'
 
 export default function Home() {
@@ -14,9 +14,8 @@ export default function Home() {
     async function init() {
       try {
         await loadExercises()
-        const allExercises = getMergedExercises()
+        let allExercises = getMergedExercises()
         console.log('加载的练习数量:', allExercises.length)
-        setExercises(allExercises)
 
         // 如果没有加载到练习，显示错误
         if (allExercises.length === 0) {
@@ -24,14 +23,20 @@ export default function Home() {
           return
         }
 
+        // 确保 progress 数据已初始化
+        const progress = getProgress()
+
+        // 检查是否需要生成动态练习
+        await checkAndGenerateDynamicExercises(allExercises, progress)
+
+        // 重新获取练习（可能已生成新的）
+        allExercises = getMergedExercises()
+        setExercises(allExercises)
+
         const date = today()
         let dailyPlan = getPlan(date)
 
-        // 确保 progress 数据已初始化
-        getProgress()
-
         if (!dailyPlan) {
-          const progress = getProgress()
           dailyPlan = generateDailyPlan(allExercises, progress)
           savePlan(date, dailyPlan)
         }
@@ -257,6 +262,11 @@ export default function Home() {
                 <span className="text-xs text-stone-400">
                   {ex.mechanism} · {ex.mechanismName}
                 </span>
+                {ex.isDynamic && (
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">
+                    AI生成
+                  </span>
+                )}
               </div>
 
               <h3 className="font-medium text-lg mb-1">{ex.title}</h3>
