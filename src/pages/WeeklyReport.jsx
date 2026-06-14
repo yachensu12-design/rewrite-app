@@ -34,6 +34,21 @@ export default function WeeklyReport() {
       // 获取本周数据
       const weekData = getWeekData()
 
+      const requestBody = {
+        model: 'kimi-k2.5',
+        messages: [
+          {
+            role: 'system',
+            content: '你是一位温暖的心理陪伴者。用户正在进行365天的行为练习，试图覆写旧的心理模式。请根据用户本周的练习数据，生成一份温柔的周报回顾。语气要平静、不评判、不催促，像了解他的朋友一样。不要使用"加油""你很棒"等空洞鼓励。'
+          },
+          {
+            role: 'user',
+            content: `请根据以下数据生成周报：\n${JSON.stringify(weekData, null, 2)}\n\n请包含：\n1. 本周完成概览（几天完成，总共完成几个练习）\n2. 进步最大的机制（水位变化）\n3. 最有挑战的机制\n4. 精选2-3条用户的感受记录\n5. 一句温柔的总结，不带评判`
+          }
+        ]
+      }
+      console.log('Kimi API 请求体:', JSON.stringify(requestBody, null, 2))
+
       // 调用 Kimi API
       const response = await fetch('https://api.moonshot.cn/v1/chat/completions', {
         method: 'POST',
@@ -41,24 +56,13 @@ export default function WeeklyReport() {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${settings.kimi_api_key}`
         },
-        body: JSON.stringify({
-          model: 'kimi-k2.5',
-          messages: [
-            {
-              role: 'system',
-              content: '你是一位温暖的心理陪伴者。用户正在进行365天的行为练习，试图覆写旧的心理模式。请根据用户本周的练习数据，生成一份温柔的周报回顾。语气要平静、不评判、不催促，像了解他的朋友一样。不要使用"加油""你很棒"等空洞鼓励。'
-            },
-            {
-              role: 'user',
-              content: `请根据以下数据生成周报：\n${JSON.stringify(weekData, null, 2)}\n\n请包含：\n1. 本周完成概览（几天完成，总共完成几个练习）\n2. 进步最大的机制（水位变化）\n3. 最有挑战的机制\n4. 精选2-3条用户的感受记录\n5. 一句温柔的总结，不带评判`
-            }
-          ]
-        })
+        body: JSON.stringify(requestBody)
       })
 
       if (!response.ok) {
         const err = await response.json()
-        throw new Error(err.error?.message || 'API 调用失败')
+        console.error('Kimi API 完整错误:', err)
+        throw new Error(JSON.stringify(err.error) || 'API 调用失败')
       }
 
       const data = await response.json()
