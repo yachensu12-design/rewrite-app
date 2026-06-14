@@ -53,7 +53,7 @@ export default function WeeklyReport() {
               content: `请根据以下数据生成周报：\n${JSON.stringify(weekData, null, 2)}\n\n请包含：\n1. 本周完成概览（几天完成，总共完成几个练习）\n2. 进步最大的机制（水位变化）\n3. 最有挑战的机制\n4. 精选2-3条用户的感受记录\n5. 一句温柔的总结，不带评判`
             }
           ],
-          temperature: 0.7
+          temperature: 1
         })
       })
 
