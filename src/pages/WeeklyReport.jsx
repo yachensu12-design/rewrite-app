@@ -35,7 +35,7 @@ export default function WeeklyReport() {
       const weekData = getWeekData()
 
       const requestBody = {
-        model: 'kimi-k2.5',
+        model: 'moonshot-v1-8k',
         messages: [
           {
             role: 'system',
