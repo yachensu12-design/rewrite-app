@@ -34,9 +34,13 @@ export default function Home() {
         setExercises(allExercises)
 
         const date = today()
+        console.log('当前日期:', date)
         let dailyPlan = getPlan(date)
+        console.log('今日计划:', dailyPlan)
 
-        if (!dailyPlan) {
+        // 检查是否是昨天的计划（plan.date 和今天的日期不一致）
+        if (!dailyPlan || dailyPlan.date !== date) {
+          console.log('生成新的每日计划')
           dailyPlan = generateDailyPlan(allExercises, progress)
           savePlan(date, dailyPlan)
         }
