@@ -8,6 +8,7 @@ export default function Settings() {
   const [testStatus, setTestStatus] = useState('')
   const [apiKeyInput, setApiKeyInput] = useState('')
   const [showApiKeyInput, setShowApiKeyInput] = useState(false)
+  const [showResetConfirm, setShowResetConfirm] = useState(false)
 
   useEffect(() => {
     setSettings(getSettings())
@@ -23,6 +24,37 @@ export default function Settings() {
       })
     }
   }, [])
+
+  const handleResetData = () => {
+    // 清空所有 LocalStorage 数据（保留 Kimi API Key）
+    const apiKey = settings.kimi_api_key
+    localStorage.clear()
+
+    // 恢复 API Key 和基本设置
+    const newSettings = {
+      notification_time: '08:00',
+      start_date: new Date().toISOString().slice(0, 10),
+      kimi_api_key: apiKey
+    }
+    localStorage.setItem('settings', JSON.stringify(newSettings))
+
+    // 重新初始化 progress
+    const defaultProgress = {
+      M1: { water_level: 10, consecutive_days: 0, total_completed: 0, total_skipped: 0, last_completed_date: null },
+      M2: { water_level: 10, consecutive_days: 0, total_completed: 0, total_skipped: 0, last_completed_date: null },
+      M3: { water_level: 10, consecutive_days: 0, total_completed: 0, total_skipped: 0, last_completed_date: null },
+      M4: { water_level: 10, consecutive_days: 0, total_completed: 0, total_skipped: 0, last_completed_date: null },
+      M5: { water_level: 10, consecutive_days: 0, total_completed: 0, total_skipped: 0, last_completed_date: null },
+      M6: { water_level: 10, consecutive_days: 0, total_completed: 0, total_skipped: 0, last_completed_date: null },
+      M7: { water_level: 10, consecutive_days: 0, total_completed: 0, total_skipped: 0, last_completed_date: null },
+    }
+    localStorage.setItem('mechanism_progress', JSON.stringify(defaultProgress))
+
+    setSettings(newSettings)
+    setShowResetConfirm(false)
+    alert('数据已清空，页面将刷新')
+    window.location.reload()
+  }
 
   const requestPermission = async () => {
     if (!('Notification' in window)) {
@@ -230,6 +262,44 @@ export default function Settings() {
             </>
           )}
         </div>
+      </div>
+
+      {/* 数据管理 */}
+      <div className="bg-white rounded-2xl p-5 mb-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.04)' }}>
+        <h2 className="font-medium mb-4">数据管理</h2>
+
+        {!showResetConfirm ? (
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm">清空所有练习数据</p>
+              <p className="text-xs text-stone-400">重置进度、日志、计划，保留 API Key</p>
+            </div>
+            <button
+              onClick={() => setShowResetConfirm(true)}
+              className="px-4 py-2 rounded-full text-sm border border-red-300 text-red-600"
+            >
+              清空数据
+            </button>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            <p className="text-sm text-red-600">确定要清空所有数据吗？此操作不可恢复。</p>
+            <div className="flex gap-2">
+              <button
+                onClick={handleResetData}
+                className="flex-1 py-2 rounded-full text-sm text-white bg-red-500"
+              >
+                确定清空
+              </button>
+              <button
+                onClick={() => setShowResetConfirm(false)}
+                className="flex-1 py-2 rounded-full text-sm border border-stone-200"
+              >
+                取消
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* 关于 */}
